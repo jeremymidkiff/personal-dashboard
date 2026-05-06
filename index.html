@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tactical Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- CLOCK -->
+    <div class="card">
+      <h2>⏰ SYSTEM TIME</h2>
+      <div id="time">--:--:--</div>
+      <div id="date">----</div>
+    </div>
+
+    <!-- WEATHER -->
+    <div class="card">
+      <h2>🌤 WEATHER SYSTEM</h2>
+
+      <input id="cityInput" type="text" placeholder="Enter city">
+
+      <button onclick="getWeather()">Search City</button>
+      <button onclick="getLocationWeather()">Use My Location</button>
+
+      <div id="weatherResult"></div>
+    </div>
+
+    <!-- TASK SYSTEM -->
+    <div class="card">
+      <h2>📝 TASK SYSTEM</h2>
+
+      <input id="taskInput" type="text" placeholder="New task">
+
+      <select id="taskPriority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <button onclick="addTask()">Add Task</button>
+
+      <div id="taskStats"></div>
+
+      <div id="progressBarContainer">
+        <div id="progressBar"></div>
+      </div>
+
+      <div class="filters">
+        <button onclick="setFilter('all')">All</button>
+        <button onclick="setFilter('active')">Active</button>
+        <button onclick="setFilter('completed')">Done</button>
+      </div>
+
+      <ul id="taskList"></ul>
+    </div>
+
+    <!-- SYSTEM PANEL -->
+    <div class="card">
+      <h2>🧠 SYSTEM STATUS</h2>
+
+      <div class="status-item">✔ Core Systems Online</div>
+      <div class="status-item">✔ Task Engine Active</div>
+      <div class="status-item">✔ UI Renderer Stable</div>
+      <div class="status-item" id="weatherStatus">⚠ Weather API Pending</div>
+
+      <div class="quote">
+        “Discipline is built, not found.”
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

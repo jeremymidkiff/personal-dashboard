@@ -1,0 +1,155 @@
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0f;
+  color: #e5e7eb;
+}
+
+/* GRID BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  padding: 20px;
+}
+
+/* CARDS */
+.card {
+  background: rgba(18, 18, 28, 0.85);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 18px;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(59,130,246,0.15);
+  border-color: rgba(59,130,246,0.3);
+}
+
+/* TEXT */
+h2 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+/* CLOCK */
+#time {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #0b1220;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  color: white;
+}
+
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+/* BUTTONS */
+button {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+  background: rgba(59,130,246,0.08);
+}
+
+/* WEATHER */
+#weatherResult {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* TASKS */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #0f172a;
+  border-radius: 8px;
+  margin-top: 8px;
+  transition: all 0.2s ease;
+}
+
+li:hover {
+  background: rgba(59,130,246,0.08);
+}
+
+.priority-low { color: #22c55e; }
+.priority-medium { color: #facc15; }
+.priority-high { color: #ef4444; }
+
+/* PROGRESS */
+#progressBarContainer {
+  width: 100%;
+  height: 6px;
+  background: #0b1220;
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  transition: width 0.3s ease;
+}
+
+/* STATUS PANEL */
+.status-item {
+  font-size: 13px;
+  opacity: 0.85;
+  margin: 6px 0;
+}
+
+.quote {
+  margin-top: 12px;
+  font-size: 12px;
+  font-style: italic;
+  opacity: 0.6;
+  border-left: 2px solid #3b82f6;
+  padding-left: 10px;
+}
